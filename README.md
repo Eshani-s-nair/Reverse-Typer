@@ -1,8 +1,3 @@
-Got it ✅
-Here’s your README converted to that fun **TinkerHub Useless Projects** format:
-
----
-
 # TypeFlip 🎯
 
 ## Basic Details
@@ -11,9 +6,8 @@ Here’s your README converted to that fun **TinkerHub Useless Projects** format
 
 ### Team Members
 
-* Team Lead: \[Your Name] – \[Your College]
-* Member 2: \[Name] – \[College]
-* Member 3: \[Name] – \[College]
+* Team Lead: Haifa Shameem thotton – \[Your College]
+* Member 2: Eshani S Nair – \[College]
 
 ### Project Description
 
@@ -116,5 +110,6 @@ Made with ❤️ at TinkerHub Useless Projects
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000\&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
+
 
 
