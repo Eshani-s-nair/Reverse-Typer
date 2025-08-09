@@ -17,7 +17,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
   res.render("index", { initialTime: "00" });
 });
-
+app.get("/result", (req, res) => {
+  res.render("result");
+});
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

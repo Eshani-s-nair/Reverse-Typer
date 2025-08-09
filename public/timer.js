@@ -1,19 +1,17 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const timerDisplay = document.getElementById('timer'); // changed from 'index'
-  const typingBox = document.getElementById('user-input'); // changed from 'typingBox'
+  const timerDisplay = document.getElementById('timer');
+  const typingBox = document.getElementById('user-input');
 
   let seconds = 0;
   let intervalId = null;
   let started = false;
 
-  // Format seconds into MM:SS
   function formatTime(sec) {
     const m = Math.floor(sec / 60).toString().padStart(2, '0');
     const s = (sec % 60).toString().padStart(2, '0');
     return `${m}:${s}`;
   }
 
-  // Initialize timer display
   timerDisplay.textContent = formatTime(0);
 
   typingBox.addEventListener('input', () => {
@@ -25,7 +23,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (seconds >= 60) {
           clearInterval(intervalId);
-          typingBox.disabled = true; // Optional: disable input after 1 min
+          typingBox.disabled = true;
+          if (typeof finishTest === "function") finishTest(); // End session if timer runs out
         }
       }, 1000);
     }
