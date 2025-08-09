@@ -6,8 +6,8 @@
 
 ### Team Members
 
-* Team Lead: Haifa Shameem thotton – \[Your College]
-* Member 2: Eshani S Nair – \[College]
+* Team Lead: Haifa Shameem thotton – \[SOE CUSAT]
+* Member 2: Eshani S Nair – \[SOE CUSAT]
 
 ### Project Description
 
@@ -85,23 +85,11 @@ Then open `http://localhost:3000` in your browser.
 
 ---
 
-### Project Demo
-
-# Video
-
-\[Add your demo video link here]
-*Shows gameplay in different modes and scoreboard updates*
-
-# Additional Demos
-
-\[Optional links to GIFs, funny fails, or user reactions]
-
----
 
 ## Team Contributions
 
 * **\[Haifa Shameem Thotton]**:Frontend UI, reverse mode logic, performance metrics calculations and display.
-* **\[Eshani S Nair]**:   Backend setup with Express.js, sentence generation logic, timer.
+* **\[Eshani S Nair]**:   Backend setup with Express.js,EJS , sentence generation logic, timer.
 
 
 ---
@@ -110,6 +98,7 @@ Made with ❤️ at TinkerHub Useless Projects
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000\&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
+
 
 
 
