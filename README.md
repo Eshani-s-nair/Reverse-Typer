@@ -2,7 +2,7 @@
 
 ## Basic Details
 
-### Team Name: The Reverse Engineers
+### Team Name: Nexus
 
 ### Team Members
 
@@ -65,23 +65,15 @@ Then open `http://localhost:3000` in your browser.
 
 ### Project Documentation
 
-# Screenshots (Add at least 3)
+# Screenshots 
 
-!\[Screenshot1]\(Add screenshot 1 here)
-*Main screen with mode selection buttons*
+<img width="1919" height="784" alt="image" src="https://github.com/user-attachments/assets/3d24078d-cb21-47fa-911f-0d65fc717313" />
 
-!\[Screenshot2]\(Add screenshot 2 here)
-*Reverse typing mode in progress with timer running*
 
-!\[Screenshot3]\(Add screenshot 3 here)
-*Results page showing WPM, accuracy, and graph*
+<img width="1890" height="765" alt="image" src="https://github.com/user-attachments/assets/175d132c-a491-470f-89d3-675ce0803671" />
 
----
 
-# Diagrams
-
-!\[Workflow]\(Add your workflow/architecture diagram here)
-*How sentences get generated, reversed, and timed for scoring*
+<img width="1879" height="853" alt="image" src="https://github.com/user-attachments/assets/f2605544-5842-4fbc-a7d8-1e4c36401953" />
 
 ---
 
@@ -98,6 +90,7 @@ Made with ❤️ at TinkerHub Useless Projects
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000\&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)
+
 
 
 
