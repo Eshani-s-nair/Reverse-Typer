@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="result-bg">
+  <div class="result-flex">
+    <div class="result-scoreboard">
+      <div class="result-header">
+        <span class="result-logo">monkeytype</span>
+      </div>
+      <hr class="result-line">
+      <div class="result-main">
+        <div class="result-wpm">
+          <span class="result-label">wpm</span>
+          <span class="result-value" id="wpm"></span>
+        </div>
+        <div class="result-acc">
+          <span class="result-label">acc</span>
+          <span class="result-value" id="acc"></span>
+        </div>
+      </div>
+      <div class="result-details">
+        <div>
+          <span class="result-detail-label">correct</span>
+          <span id="correct"></span>
+          <span>/</span>
+          <span id="total"></span>
+        </div>
+        <div>
+          <span class="result-detail-label">accuracy</span>
+          <span id="accuracy"></span>
+        </div>
+        <div>
+          <span class="result-detail-label">test type</span>
+          <span>words</span>
+        </div>
+      </div>
+    </div>
+    <div class="result-graph">
+      <canvas id="resultChart" width="600" height="250"></canvas>
+    </div>
+  </div>
+  <script>
+    const wpm = localStorage.getItem("wpm");
+    const correct = localStorage.getItem("correct");
+    const total = localStorage.getItem("total");
+    const accuracy = total && total > 0 ? ((correct / total) * 100).toFixed(1) + "%" : "0%";
+    document.getElementById("wpm").textContent = wpm;
+    document.getElementById("acc").textContent = accuracy;
+    document.getElementById("correct").textContent = correct;
+    document.getElementById("total").textContent = total;
+    document.getElementById("accuracy").textContent = accuracy;
+
+    const wpmHistory = JSON.parse(localStorage.getItem("wpmHistory") || "[]");
+    const errorHistory = JSON.parse(localStorage.getItem("errorHistory") || "[]");
+    const graphLength = Math.max(wpmHistory.length, 30);
+    const wpmData = wpmHistory.length ? wpmHistory : Array.from({length: graphLength}, (_, i) => Math.floor(Math.random() * 20 + 40));
+    const errorData = errorHistory.length ? errorHistory : Array.from({length: graphLength}, () => Math.floor(Math.random() * 3));
+
+    const ctx = document.getElementById('resultChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: wpmData.map((_, i) => i + 1),
+        datasets: [
+          {
+            label: 'Words Per Minute',
+            data: wpmData,
+            borderColor: '#ffe066',
+            backgroundColor: 'rgba(255,224,102,0.1)',
+            yAxisID: 'y',
+            tension: 0.3,
+            pointRadius: 0,
+          },
+          {
+            label: 'Errors',
+            data: errorData,
+            borderColor: '#faa2ce',
+            backgroundColor: 'rgba(250,162,206,0.1)',
+            yAxisID: 'y1',
+            tension: 0.3,
+            pointRadius: 3,
+            showLine: false,
+          }
+        ]
+      },
+      options: {
+        plugins: {
+          legend: { display: true },
+          title: {
+            display: true,
+            text: 'Typing Performance Over Time',
+            color: '#faa2ce',
+            font: { size: 20 }
+          }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Time (seconds)',
+              color: '#eee',
+              font: { size: 16 }
+            },
+            ticks: { color: '#eee' }
+          },
+          y: {
+            type: 'linear',
+            position: 'left',
+            title: { display: true, text: 'WPM', color: '#ffe066', font: { size: 16 } },
+            min: 0,
+            ticks: { color: '#ffe066' }
+          },
+          y1: {
+            type: 'linear',
+            position: 'right',
+            title: { display: true, text: 'Errors', color: '#faa2ce', font: { size: 16 } },
+            min: 0,
+            grid: { drawOnChartArea: false },
+            ticks: { color: '#faa2ce' }
+          }
+        }
+      }
+    });
+  </script>

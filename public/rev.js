@@ -177,12 +177,10 @@ document.getElementById("user-input").addEventListener("keydown", function(e) {
       let elapsed = (Date.now() - startTime) / 60000;
       let correct = colors.filter(c => c === "green").length;
       let wpm = Math.round(correct / elapsed);
-      // Store score in localStorage and redirect
-      localStorage.setItem("wpm", wpm);
-      localStorage.setItem("correct", correct);
-      localStorage.setItem("total", reversedWords.length);
-      window.location.href = "result.html";
-}
+      setTimeout(() => {
+        alert("WPM: " + wpm);
+      }, 100);
+    }
   }
 });
 
@@ -214,4 +212,30 @@ function setMode(selectedMode) {
   generateSentence(selectedMode);
 }
 
-// ...existing code...
+function finishTest() {
+  let elapsed = startTime ? (Date.now() - startTime) / 60000 : 1;
+  let reversedWords = currentReversed.split(" ");
+  let correct = 0;
+
+  // For blind/guess, count correct if possible, else skip
+  if (mode === "blind" || mode === "guess") {
+    // Optionally, you can compare userWords to reversedWords for blind mode
+    for (let i = 0; i < reversedWords.length; i++) {
+      if (userWords[i] === reversedWords[i]) {
+        correct++;
+      }
+    }
+  } else {
+    for (let i = 0; i < reversedWords.length; i++) {
+      if (userWords[i] === reversedWords[i]) {
+        correct++;
+      }
+    }
+  }
+
+  let wpm = Math.round(correct / elapsed);
+  localStorage.setItem("wpm", wpm);
+  localStorage.setItem("correct", correct);
+  localStorage.setItem("total", reversedWords.length);
+  window.location.href = "/result";
+}

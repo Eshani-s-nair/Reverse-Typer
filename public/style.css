@@ -75,4 +75,115 @@ h2 {
   color: #444;
 }
 
-/* ...existing code... */
+.result-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.result-scoreboard {
+  background: #22232a;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #000a;
+  padding: 32px 32px 24px 32px;
+  min-width: 320px;
+  max-width: 340px;
+  text-align: center;
+}
+
+.result-graph {
+  background: #22232a;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #000a;
+  padding: 32px 32px 24px 32px;
+  min-width: 600px;
+  max-width: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#resultChart {
+  display: block;
+  margin: 0 auto;
+  background: #181a20;
+  border-radius: 12px;
+}
+/* Add or update in style.css */
+
+.result-scoreboard {
+  background: #23272f;           /* Slightly lighter than graph for contrast */
+  border-radius: 18px;
+  box-shadow: 0 4px 32px #000a;
+  padding: 32px 32px 24px 32px;
+  min-width: 320px;
+  max-width: 340px;
+  text-align: center;
+  border: 2px solid #ffe066;     /* Yellow border for highlight */
+}
+
+.result-header {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffe066;                /* Yellow for logo/title */
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.result-logo {
+  background: #ffe066;
+  color: #23272f;
+  padding: 4px 16px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.result-line {
+  border: none;
+  border-top: 2px solid #ffe066;
+  margin: 18px 0 24px 0;
+}
+
+.result-main {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 24px;
+}
+
+.result-label {
+  display: block;
+  font-size: 1.2em;
+  color: #faa2ce;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.result-value {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #ffe066;
+  letter-spacing: 2px;
+}
+
+.result-details {
+  margin-top: 18px;
+  font-size: 1.2em;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.result-detail-label {
+  color: #faa2ce;
+  font-weight: bold;
+  margin-right: 8px;
+  text-transform: lowercase;
+
+}
