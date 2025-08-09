@@ -1,6 +1,6 @@
 # TypeFlip - Reverse Typing Challenge
 
-TypeFlip is a web-based typing challenge inspired by Monkeytype, but with a twist: you type sentences in reverse! It features multiple modes, a timer, a live scoreboard, and a performance graph.
+TypeFlip is a web-based typing challenge, but with a twist: you type sentences in reverse! It features multiple modes, a timer, a live scoreboard, and a performance graph.
 
 ## Features
 
@@ -71,4 +71,5 @@ useless project/
 - **Sentences:** You can edit or expand the sentence array in `rev.js`.
 - **Styling:** Modify `style.css` for custom colors and layout.
 - **Modes:** Add or tweak modes in `rev.js` for new challenges.
+
 
