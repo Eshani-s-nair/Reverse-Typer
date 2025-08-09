@@ -100,7 +100,8 @@ function generateSentence(modeParam = "letters") {
   mode = modeParam;
   let randomSentence;
   if (mode === "guess") {
-    randomSentence = getRandomSentence(); 
+    randomSentence = getRandomSentence();
+ 
   } else {
     randomSentence = getRandomSentences().join(" ");
   }
@@ -176,10 +177,12 @@ document.getElementById("user-input").addEventListener("keydown", function(e) {
       let elapsed = (Date.now() - startTime) / 60000;
       let correct = colors.filter(c => c === "green").length;
       let wpm = Math.round(correct / elapsed);
-      setTimeout(() => {
-        alert("WPM: " + wpm);
-      }, 100);
-    }
+      // Store score in localStorage and redirect
+      localStorage.setItem("wpm", wpm);
+      localStorage.setItem("correct", correct);
+      localStorage.setItem("total", reversedWords.length);
+      window.location.href = "result.html";
+}
   }
 });
 
