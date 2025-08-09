@@ -199,13 +199,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function setMode(selectedMode) {
+  if (typeof resetTimer === "function") resetTimer();
+
   mode = selectedMode;
+
+  // Toggle active class on buttons
   document.getElementById("letters-btn").classList.toggle("active", selectedMode === "letters");
   document.getElementById("sentence-btn").classList.toggle("active", selectedMode === "sentence");
   document.getElementById("blind-btn").classList.toggle("active", selectedMode === "blind");
   document.getElementById("guess-btn").classList.toggle("active", selectedMode === "guess");
+
   generateSentence(selectedMode);
 }
+
+
 
 function finishTest() {
   let elapsed = startTime ? (Date.now() - startTime) / 60000 : 1;
