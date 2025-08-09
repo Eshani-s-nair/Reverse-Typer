@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
-  const timerDisplay = document.getElementById('timer');
-  const typingBox = document.getElementById('typingBox');
+  const timerDisplay = document.getElementById('timer'); // changed from 'index'
+  const typingBox = document.getElementById('user-input'); // changed from 'typingBox'
 
   let seconds = 0;
   let intervalId = null;
