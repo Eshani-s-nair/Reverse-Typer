@@ -19,6 +19,11 @@ TypeFlip is a web-based typing challenge, but with a twist: you type sentences i
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
+- [Express.js](https://expressjs.com/)
+- [EJS](https://ejs.co/)
+- Basic knowledge of HTML
+- Basic knowledge of CSS
+- Basic knowledge of JavaScript
 
 ### Installation
 
@@ -71,5 +76,6 @@ useless project/
 - **Sentences:** You can edit or expand the sentence array in `rev.js`.
 - **Styling:** Modify `style.css` for custom colors and layout.
 - **Modes:** Add or tweak modes in `rev.js` for new challenges.
+
 
 
