@@ -174,13 +174,8 @@ document.getElementById("user-input").addEventListener("keydown", function(e) {
     this.value = "";
 
     if (userWords.length === reversedWords.length) {
-      let elapsed = (Date.now() - startTime) / 60000;
-      let correct = colors.filter(c => c === "green").length;
-      let wpm = Math.round(correct / elapsed);
-      setTimeout(() => {
-        alert("WPM: " + wpm);
-      }, 100);
-    }
+  finishTest();
+}
   }
 });
 

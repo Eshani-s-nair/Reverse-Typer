@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.site-header {
+  height: 10vh; /* At least 30% of viewport height */
+  display: flex;
+  align-items: center; /* Vertically center text */
+  background-color:black; /* Dark background */
+  padding-left: 3rem;
+  margin-bottom: 5vh; /* Space from left edge */
+}
+
+.header-title {
+  color: #ffe066; /* Yellow to match monkeytype */
+  font-size: 4rem; /* Large text */
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  margin: 0;
+}

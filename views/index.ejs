@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%- include("header") %>
   <title>Reverse Typing Challenge</title>
   <link rel="stylesheet" href="/style.css">
 </head>
@@ -23,8 +24,14 @@
 
   <!-- User input box -->
   <input type="text" id="user-input" placeholder="Type the reversed text here...">
-
+  <!-- ...existing code... -->
+<!-- ...existing code... -->
   <br><br>
+  <script src="/compliments.js"></script>
+  <script>
+  // Only run if accuracyScore is present in localStorage
+  const accuracyScore = localStorage.getItem("accuracyScore");
+</script>
   <script src="/rev.js"></script>
   <script src="/timer.js"></script>
 </body>

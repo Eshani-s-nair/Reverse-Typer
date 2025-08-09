@@ -5,13 +5,31 @@
   <link rel="stylesheet" href="/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+  <%- include("header") %>
+ <div id="compliment-container" style="margin-top:30px; text-align:center;">
+    <p id="compliment-text"
+       style="
+         color: #da83a9;
+         stroke: aliceblue;
+         stroke-width: 2px;
+         font-size: 2rem;
+         font-weight: bold;
+         font-family:cursive;
+         background: rgba(0, 0, 0, 0.4);
+         padding: 20px 30px;
+         border-radius: 15px;
+         display: inline-block;
+         box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+         max-width: 80%;
+         line-height: 1.4;
+       ">
+    </p>
+    <audio id="compliment-audio" autoplay style="display:none;"></audio>
+  </div>
 <body class="result-bg">
   <div class="result-flex">
     <div class="result-scoreboard">
-      <div class="result-header">
-        <span class="result-logo">monkeytype</span>
-      </div>
-      <hr class="result-line">
+
       <div class="result-main">
         <div class="result-wpm">
           <span class="result-label">wpm</span>
@@ -43,17 +61,30 @@
       <canvas id="resultChart" width="600" height="250"></canvas>
     </div>
   </div>
+
+  <!-- Compliment display -->
+ 
+
+  <script src="/compliments.js"></script>
+
   <script>
+    // Retrieve stored stats
     const wpm = localStorage.getItem("wpm");
-    const correct = localStorage.getItem("correct");
-    const total = localStorage.getItem("total");
-    const accuracy = total && total > 0 ? ((correct / total) * 100).toFixed(1) + "%" : "0%";
+    const correct = parseInt(localStorage.getItem("correct")) || 0;
+    const total = parseInt(localStorage.getItem("total")) || 0;
+    const accuracy = total > 0 ? ((correct / total) * 100).toFixed(1) + "%" : "0%";
+
     document.getElementById("wpm").textContent = wpm;
     document.getElementById("acc").textContent = accuracy;
     document.getElementById("correct").textContent = correct;
     document.getElementById("total").textContent = total;
     document.getElementById("accuracy").textContent = accuracy;
 
+    // Save numeric score for compliment
+    const numericScore = parseFloat(accuracy.replace('%','')) || 0;
+    localStorage.setItem("accuracyScore", numericScore);
+
+    // Graph data
     const wpmHistory = JSON.parse(localStorage.getItem("wpmHistory") || "[]");
     const errorHistory = JSON.parse(localStorage.getItem("errorHistory") || "[]");
     const graphLength = Math.max(wpmHistory.length, 30);
@@ -125,4 +156,17 @@
         }
       }
     });
+
+    // Play compliment & audio on load
+    window.addEventListener("DOMContentLoaded", () => {
+      if (typeof showComplimentByScore === "function") {
+        showComplimentByScore(numericScore); // Your compliments.js should handle setting text & audio src, then play()
+        const audio = document.getElementById("compliment-audio");
+        if (audio && audio.src) {
+          audio.play().catch(err => console.log("Audio autoplay blocked:", err));
+        }
+      }
+    });
   </script>
+</body>
+</html>

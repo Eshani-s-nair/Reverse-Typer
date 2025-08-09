@@ -62,9 +62,7 @@ const compliments = {
   }
 };
 
-document.getElementById("get-compliment").addEventListener("click", function () {
-  const score = parseInt(document.getElementById("score").value);
-
+function showComplimentByScore(score) {
   let tier;
   if (score >= 1 && score <= 25) tier = compliments.tier1;
   else if (score > 25 && score <= 50) tier = compliments.tier2;
@@ -84,5 +82,9 @@ document.getElementById("get-compliment").addEventListener("click", function () 
 
   const audioEl = document.getElementById("compliment-audio");
   audioEl.src = audioSrc;
-  audioEl.play();
-});
+  audioEl.load();
+  audioEl.play().catch(() => {
+    // If autoplay is blocked, show controls and a message
+    audioEl.style.display = "block";
+  });
+}

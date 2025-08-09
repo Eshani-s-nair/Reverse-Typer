@@ -84,7 +84,7 @@ h2 {
 }
 
 .result-scoreboard {
-  background: #22232a;
+  background:black;
   border-radius: 18px;
   box-shadow: 0 4px 32px #000a;
   padding: 32px 32px 24px 32px;
@@ -94,7 +94,7 @@ h2 {
 }
 
 .result-graph {
-  background: #22232a;
+  background: black;
   border-radius: 18px;
   box-shadow: 0 4px 32px #000a;
   padding: 32px 32px 24px 32px;
@@ -108,20 +108,20 @@ h2 {
 #resultChart {
   display: block;
   margin: 0 auto;
-  background: #181a20;
+  background:black;
   border-radius: 12px;
 }
 /* Add or update in style.css */
 
 .result-scoreboard {
-  background: #23272f;           /* Slightly lighter than graph for contrast */
+  background: black;           /* Slightly lighter than graph for contrast */
   border-radius: 18px;
   box-shadow: 0 4px 32px #000a;
   padding: 32px 32px 24px 32px;
   min-width: 320px;
   max-width: 340px;
   text-align: center;
-  border: 2px solid #ffe066;     /* Yellow border for highlight */
+   /* Yellow border for highlight */
 }
 
 .result-header {
